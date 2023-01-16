@@ -15,6 +15,7 @@ assuming that you want to rebase a feature branch to a master branch
 - git rebase master
 - git checkout master
 - git rebase feature
+
 this will get the head of master branch at the top of rebased feature commit
 - git branch -d feature
 
