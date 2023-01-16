@@ -6,7 +6,7 @@
 
 git merge
 - git checkout master
-- git mege feature
+- git merge feature
 - git branch -d feature
 
 ## 2. Rebase
