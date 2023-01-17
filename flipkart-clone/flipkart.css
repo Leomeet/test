@@ -342,13 +342,15 @@ header .cart a .txt {
   max-width: 200px;
 }
 .main .container .products .product_container .product .off {
+  font-family: Roboto, Arial, sans-serif;
   padding: 5px;
   padding-top: 5px;
   display: flex;
-  font-size: 14px;
+  font-size: 12px;
   color: green;
 }
 .main .container .products .product_container .product .division {
+  font-family: Roboto, Arial, sans-serif;
   width: auto;
   padding-top: 5px;
   text-align: center;
