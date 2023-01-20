@@ -32,18 +32,24 @@ body main .container {
   flex-direction: column;
 }
 body main .container .display input {
+  margin-left: 1px;
   background-color: rgba(140, 170, 231, 0.685);
   max-width: 320px;
   border: none;
   outline: none;
   text-align: right;
   font-family: "Inconsolata", monospace;
+  transition-delay: 100ms;
 }
 body main .container .display #output_main {
+  height: 60px;
   font-size: 50px;
   font-weight: 600;
   letter-spacing: 0.8px;
   border-radius: 10px 10px 0px 0px;
+}
+body main .container .display #output_main:hover {
+  font-size: 35px;
 }
 body main .container .display #output_sub {
   padding: 5px 3px;
@@ -66,6 +72,9 @@ body main .container .trigo button {
   font-family: "Kanit", sans-serif;
   letter-spacing: 1px;
   font-size: 18px;
+}
+body main .container .trigo button:hover {
+  color: aliceblue;
 }
 body main .container .memory {
   width: 100%;
@@ -98,13 +107,33 @@ body main .container .dropdown {
   display: flex;
   flex-direction: row;
   width: 100%;
-  justify-content: left;
-  padding: 2px;
-  margin: 5px 0px 5px 10px;
+  justify-content: center;
+  align-items: center;
   font-size: 18px;
 }
-body main .container .dropdown .Function {
-  margin-left: 20px;
+body main .container .dropdown .icon {
+  margin-right: -2px;
+}
+body main .container .dropdown .btn {
+  padding: 0px;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+body main .container .dropdown .btn button {
+  font-family: "Inconsolata", monospace;
+  border: none;
+  background: rgba(90, 106, 138, 0.74);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  min-width: 40px;
+  height: 20px;
+  color: rgb(238, 238, 238);
+}
+body main .container .dropdown .btn:hover button {
+  background: rgba(99, 115, 148, 0.644);
 }
 body main .container .table {
   width: 100%;

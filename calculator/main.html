@@ -36,10 +36,10 @@
         </div>
 
         <div class="trigo">
-           <button value="DEG">
+           <button value="DEG" onclick="DEG()">
             DEG
            </button>
-           <button value="F-E">
+           <button value="F-E" onclick="FE()">
             F-E
            </button>
         </div>
@@ -48,19 +48,19 @@
           <table>
             <tr>
               <td>
-                <button value="MC">MC</button>
+                <button value="MC" onclick="mc()">MC</button>
               </td>
               <td>
-                <button value="MR">MR</button>
+                <button value="MR" onclick="mr()">MR</button>
               </td>
               <td>
-                <button value="M+">M+</button>
+                <button value="M+" onclick="mplus()">M+</button>
               </td>
               <td>
-                <button value="M-">M-</button>
+                <button value="M-" onclick="mminus()">M-</button>
               </td>
               <td>
-                <button value="MS">MS</button>
+                <button value="MS" onclick="msave()">MS</button>
               </td>
             </tr>
           </table>
@@ -68,11 +68,36 @@
 
         <div class="dropdown">
 
-          <div class="trigonometry">
-            Trigonometry
+          <div class="icon">
+            &#8895;	
           </div>
-          <div class="Function">
-            Function
+          <div class="btn">
+            <button value="sin" onclick="sin()">
+              sin
+            </button>
+          </div>
+          <div class="btn">
+            <button value="cos" onclick="cos()">
+              cos
+            </button>
+          </div>
+          <div class="btn">
+            <button value="tan" onclick="tan()">
+              tan
+            </button>
+          </div>
+          <div class="btn">
+            <button value="sec" onclick="sec()">
+              sec
+            </button>
+          </div><div class="btn">
+            <button value="cosec" onclick="cosec()">
+              cosec
+            </button>
+          </div><div class="btn">
+            <button value="cosec" onclick="cot()"> 
+              cot
+            </button>
           </div>
 
         </div>
@@ -85,13 +110,13 @@
               <td><button value="2nd" onclick="">
                       2<sup>nd</sup>
               </button></td>
-              <td><button value="pi" onclick="">
+              <td><button value="pi" onclick="pi()">
                   &#928; <!--pie -->
               </button></td>
-              <td><button value="e" onclick="">
+              <td><button value="e" onclick="e()">
                   e
               </button></td>
-              <td><button value="C" onclick="">
+              <td><button value="C" onclick="clean_slate()">
                 C
               </button></td>
               <td><button onclick="back_space()">
@@ -101,24 +126,24 @@
 
 
             <tr>
-              <td><button value="^2" onclick="">
+              <td><button value="^2" onclick="x_squere()">
                 x<sup>2</sup>
               </button></td>
-              <td><button value="1/x" onclick="">
+              <td><button value="1/x" onclick="inverse()">
                 <sup>1</sup>/x
               </button></td>
-              <td><button value="abs" onclick="">
+              <td><button value="abs" onclick="absolute_f()">
                 |x|
               </button></td>
-              <td><button value="exp" onclick="">
+              <td><button value="exp" onclick="exp()">
                 exp
               </button></td>
-              <td><button value="mod" onclick="">
+              <td><button value="%" onclick="f_print(event)">
                 mod
               </button></td>
             </tr>
             <tr>
-              <td><button value="2sqrtx" onclick="">
+              <td><button value="2sqrtx" onclick="sqrt2x()">
                 <sup>2</sup>&radic;x <!-- 2 sqroot of x-->
               </button></td>
               <td><button value="(" onclick="f_print(event)">
@@ -127,7 +152,7 @@
               <td><button value=")" onclick="f_print(event)">
                 )
               </button></td>
-              <td><button value="!" onclick="">
+              <td><button value="!" onclick="fectorialize()">
                 n!
               </button></td>
               <td><button style="font-size: 20px;" value="/" onclick="f_print(event)">
@@ -137,7 +162,7 @@
 
 
             <tr>
-              <td><button value="**" onclick="f_print(event)">
+              <td><button value="**" id="x_res_y" onclick="f_print(event)">
                 x<sup>y</sup>
               </button></td>
               <td><button class="heighlights" value="7" onclick="f_print(event)">
@@ -172,7 +197,7 @@
             </tr>
 
             <tr>
-              <td><button >
+              <td><button value="Log" onclick="cap_log()">
                 log  
               </button></td>
               <td><button class="heighlights"value="1" onclick="f_print(event)">
@@ -190,7 +215,7 @@
             </tr>
 
             <tr>
-              <td><button>
+              <td><button value="Lg" onclick="natural_log()">
               ln    
               </button></td>
               <td><button class="heighlights" value="+/-" onclick="">

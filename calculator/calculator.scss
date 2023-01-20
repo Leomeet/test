@@ -9,6 +9,7 @@ body{
     align-items: center;   
     background-color: rgb(231, 231, 231);
     font-family: 'Inconsolata', monospace;
+  
     
     main{
         display: flex;
@@ -33,18 +34,24 @@ body{
             .display{
                 
                 input{
+                    margin-left: 1px;
                     background-color: rgba(140, 170, 231, 0.685);
                     max-width: 320px;
                     border: none;
                     outline: none;
                     text-align: right;
                     font-family: 'Inconsolata', monospace;
+                    transition-delay: 100ms;
                 }
                 #output_main{
+                    height:60px;
                     font-size: 50px;
                     font-weight: 600;
                     letter-spacing: .8px;
                     border-radius: 10px 10px 0px 0px;
+                }
+                #output_main:hover{
+                    font-size: 35px;
                 }
                 #output_sub{
                     padding: 5px 3px;
@@ -70,8 +77,12 @@ body{
                     letter-spacing: 1px;
                     font-size: 18px;
                 }
+                button:hover{
+                    color: aliceblue;
+                }
 
             }
+            
             .memory{
                 width: 100%;
                 display: flex;
@@ -114,16 +125,42 @@ body{
                 display:flex;
                 flex-direction: row;
                 width: 100%;
-                justify-content: left;
-                padding:2px;
-                margin: 5px 0px 5px 10px;
+                justify-content: center;
+                align-items: center;             
                 font-size: 18px;
-                .trigonometry{
 
-                }
-                .Function{
-                    margin-left: 20px;
-                }
+                    .icon{
+                        margin-right: -2px;
+                    }
+                    .btn{
+                        padding: 0px;
+                        margin: 0px;
+                        
+                        button{
+                            font-family: 'Inconsolata', monospace;
+                            border: none;
+                            background:  rgba(90, 106, 138, 0.74);
+                            font-weight: 500;
+                            letter-spacing: .2px;
+                            border-radius: 5px;
+                            min-width: 40px;
+                            height:20px;
+                            color: rgb(238, 238, 238);
+                        }
+                        padding: 5px 5px 5px 5px;
+                        display: flex;
+                        align-items: center;
+                        
+                    }
+                    .btn:hover{
+                        button{
+                            
+                            background:  rgba(99, 115, 148, 0.644);
+                        }
+                    }
+
+                
+             
             }
             
             .table{
