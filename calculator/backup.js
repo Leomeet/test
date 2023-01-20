@@ -31,6 +31,50 @@ function f_print(event){
     
 }
 
+function calculate() {
+
+    // X^2
+    answer = Math.pow(input, 2);
+
+    //1/X inverse
+    answer = Math.pow(input, -1);
+
+    // |X| 
+    answer = Math.abs(input);
+
+    // 10^x
+    answer = Math.pow(10, input);
+
+    // 10^(x-1)
+    answer = Math.pow(10, input - 1);
+
+    // exp
+    answer = 2.718281828
+
+    // lg with base e
+    answer = Math.log(input);
+
+    // log with base 10
+    answer = Math.log10(input);
+
+    // x ^ y
+    answer = Math.pow(ans,input);   
+  
+    // 2 sqrt(x^2
+    answer = Math.pow(Math.sqrt(input),2);
+
+    //pi
+    answer = 3.141592653589793238462643383279502884197169399375105820;
+
+    
+}
+
+function update_value(id,value) {
+    document.getElementById(id).value = value;
+}
+function get_value(id){
+    return document.getElementById(id).value;
+}
 
 
 function f_equals(){
