@@ -10,7 +10,7 @@ function check_input(value){
    
 }
     
-
+// main event function that is called on button click
 
 function f_print(event){
 
@@ -30,6 +30,8 @@ function f_print(event){
     }
     
 }
+
+
 
 function calculate() {
 

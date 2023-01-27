@@ -18,12 +18,12 @@ body main {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  background-color: rgba(140, 170, 231, 0.685);
+  background-color: rgba(163, 185, 228, 0.685);
   padding: 0px 10px 0px 10px;
   border-radius: 10px 10px 5px 5px;
   max-width: 320px;
   border: none;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.596);
 }
 body main .container {
   display: flex;
@@ -31,10 +31,12 @@ body main .container {
   align-items: center;
   flex-direction: column;
 }
+body main .container .display {
+  width: 320px;
+}
 body main .container .display input {
-  margin-left: 1px;
   background-color: rgba(140, 170, 231, 0.685);
-  max-width: 320px;
+  width: 320px;
   border: none;
   outline: none;
   text-align: right;
@@ -91,14 +93,15 @@ body main .container .memory table tr td {
 }
 body main .container .memory table tr td button {
   width: 100%;
-  height: 40px;
+  height: 30px;
   font-family: "Kanit", sans-serif;
-  background: rgba(183, 199, 231, 0.644);
+  background: rgba(167, 182, 211, 0.479);
   border: none;
   font-weight: 400;
   letter-spacing: 1px;
   font-size: 25px;
   font-size: 18px;
+  border-radius: 5px;
 }
 body main .container .memory table tr td:hover button {
   background: rgba(135, 152, 187, 0.644);
@@ -129,11 +132,11 @@ body main .container .dropdown .btn button {
   letter-spacing: 0.2px;
   border-radius: 5px;
   min-width: 40px;
-  height: 20px;
+  height: 25px;
   color: rgb(238, 238, 238);
 }
 body main .container .dropdown .btn:hover button {
-  background: rgba(99, 115, 148, 0.644);
+  background: rgba(95, 124, 187, 0.644);
 }
 body main .container .table {
   width: 100%;
@@ -165,9 +168,11 @@ body main .container .table table tr td .heighlights {
   background: whitesmoke;
 }
 body main .container .table table tr td .equals {
-  font-weight: 600;
   font-family: "Inconsolata", monospace;
   background: rgba(164, 247, 116, 0.753);
+  color: rgb(71, 139, 25);
+  font-size: 20px;
+  font-weight: 800;
 }
 body main .container .table table tr td:hover button {
   border: 2px solid rgb(158, 158, 158);

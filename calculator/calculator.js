@@ -5,15 +5,19 @@ var answer = "";
 var flag;
 var memory = 0;
 
-
+// memory functions
 function mc() {
     memory = 0;
 }
+// returns the memory value
 function mr() {
     value = memory;
     update_element("output_main", value);
     update_element("output_sub", answer);
 }
+
+// adds the current memory value to it self or answer
+
 function mplus() {
     answer = parseFloat(answer) + parseFloat(memory);
     value = answer;
@@ -21,6 +25,8 @@ function mplus() {
     update_element("output_sub", answer);
     update_answer(answer);
 }
+
+// subtract the current memory value from it self or answer
 function mminus() {
     answer = parseFloat(answer) - parseFloat(memory);
     value = answer;
@@ -28,11 +34,14 @@ function mminus() {
     update_element("output_sub", answer);
     update_answer(answer);
 }
+
+// saves memory to space
 function msave() {
     memory = value;
 }
 
 
+// validates the input with appropriate formatting 
 function check_input(value, flag) {
 
     let last_val = value.charAt(value.length - 1);
@@ -41,22 +50,27 @@ function check_input(value, flag) {
     let condition = (isNaN(parseInt(last_val, 10)) && isNaN(parseInt(second_last_val, 10)));
 
 
-    // console.log("condition 2"+condition2);
+    // check if the top of the stack and top-1 is a operator 
+    // and if yes then what action to perform as per its precedence
+
     console.log("last:" + last_val + "  second:" + second_last_val);
     if (condition == true && flag == true) {
+        
         // if this is true both the first and second values are operators
         console.log(" inside condition");
         if (second_last_val == "+" || second_last_val == "-") {
-            console.log("value:", value);
-            console.log("length before trimming" + value.length);
+            // console.log("value:", value);
+            // console.log("length before trimming" + value.length);
             value = value.substring(0, value.length - 2);
-            console.log(value);
-            console.log("Length After trimming" + value.length);
+            // console.log(value);
+            // console.log("Length After trimming" + value.length);
             value += last_val;
-            console.log("temp:" + value);
+            // console.log("temp:" + value);
             value = check_input(value);
             return value;
         }
+
+
         if (second_last_val == "*" || second_last_val == "/") {
             if (last_val == "%" || last_val == "*" || last_val == "/") {
                 console.log("value:", value);
@@ -79,27 +93,32 @@ function check_input(value, flag) {
 
     }
 
-
-
+    // if the condition fails it returns the current value as it is
     return value;
 }
 
+// updating the value of input fields with new value
 function update_element(element_id, value_up) {
     // console.log("id:"+element_id + " value_up:"+value_up);
     document.getElementById(element_id).value = value_up;
 }
+
+//get the value from given id of element
 function get_value(id) {
     return document.getElementById(id).value;
 }
+//update the value of variable "value" with answer value
 function update_value(update_value) {
     value = update_value;
 }
+//update the value of answer variable with new answer 
 function update_answer(ans) {
     answer = ans;
 }
 
 
 
+// uses eval to evaluate the answer accoring to the value input
 function evaluate_question(value, flag) {
 
     let correct_input = check_input(value, flag);
@@ -107,6 +126,8 @@ function evaluate_question(value, flag) {
     console.log("evaluated_question value: " + value);
     update_element("output_main", value);
     console.log(value);
+
+// try and catch for in complete function evaluation
     try {
         answer = eval(value);
         if (opt_2 !== undefined || opt_1 !== "") {
@@ -133,6 +154,7 @@ function evaluate_question(value, flag) {
 }
 
 
+// main function for the button click event
 function f_print(event) {
     if (value == 0 && answer == 0) {
         update_element("output_main", value);
@@ -158,6 +180,8 @@ function f_print(event) {
     console.log('final value: ' + value);
 }
 
+
+// function for clearing out everything
 function clean_slate() {
     value = "";
     update_element("output_main", 0);
@@ -165,7 +189,7 @@ function clean_slate() {
     update_answer(value);
 }
 
-
+// function for equals buttons 
 function f_equals() {
     update_element("output_main", answer);
     update_element("output_sub", 0);
@@ -186,6 +210,8 @@ function back_space() {
     // f_evel();
 }
 
+
+// calculates the value of pi
 function pi() {
     if (value == "") {
         value = "3.14";
@@ -200,6 +226,7 @@ function pi() {
     }
 
 }
+// returns the ans for e btn click
 function e() {
     if (value == "") {
         value = "2.71";
@@ -214,14 +241,19 @@ function e() {
     }
 
 }
+
+// x^2 function
 function x_squere() {
-    answer = answer * answer;
+    answer = answer ** 2;
+    // answer = answer * answer ;
     value = answer;
     update_element("output_main", value);
     update_element("output_sub", answer);
     update_answer(answer);
 }
 
+
+// 1/x function
 function inverse() {
     answer = 1 / answer;
     value = answer;
@@ -230,6 +262,8 @@ function inverse() {
     update_answer(answer);
 }
 
+
+// |x| function
 function absolute_f() {
 
     answer = Math.abs(parseFloat(answer));
@@ -238,6 +272,8 @@ function absolute_f() {
     update_element("output_sub", answer);
     update_answer(answer);
 }
+
+// exp function 
 function exp() {
 
     answer = Math.exp(parseFloat(answer));
@@ -247,6 +283,8 @@ function exp() {
     update_answer(answer);
 
 }
+
+// 2_/x̄ function
 function sqrt2x() {
     answer = Math.sqrt(parseInt(answer));
     value = answer;
@@ -255,6 +293,8 @@ function sqrt2x() {
     update_answer(answer);
 }
 
+
+// 10^x function
 function ten_res_x() {
     answer = Math.pow(10, answer);
     value = answer;
@@ -263,6 +303,7 @@ function ten_res_x() {
     update_answer(answer);
 }
 
+// LOG function 
 function cap_log() {
     answer = Math.log(answer);
     value = answer;
@@ -270,7 +311,7 @@ function cap_log() {
     update_element("output_sub", answer);
     update_answer(answer);
 }
-
+// lg function
 function natural_log() {
     e = 2.718281828;
     answer = Math.log(e, answer);
@@ -337,6 +378,8 @@ function cot(){
     update_answer(answer);
 }
 
+
+// Degree function
 function DEG(){
     answer = value * (Math.PI/180);
     value = answer;
@@ -346,6 +389,7 @@ function DEG(){
 
 }
 
+// FE function
 function FE(){
     answer = parseFloat(value).toExponential(2);
     value = answer;
@@ -353,7 +397,7 @@ function FE(){
     update_element("output_sub", answer);
     update_answer(answer);
 }
-
+// !X function 
 function fectorialize(){
     answer = factorial(answer);
     value = answer;
@@ -362,7 +406,7 @@ function fectorialize(){
     update_answer(answer);
 }
 
-
+// fectorial function
 function factorial(k) {
     if (k < 0) 
           return -1;
