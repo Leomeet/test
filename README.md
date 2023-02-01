@@ -5,4 +5,4 @@
 > DB: PostgreSQL
 
 
- `_BASE_ -> Database_SQL -> DB assighnemnt.txt`
+ `_BASE_ -> Database_SQL -> Database Submissions.txt`
