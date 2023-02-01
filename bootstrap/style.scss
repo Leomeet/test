@@ -1,0 +1,35 @@
+// font-family: 'Inconsolata', monospace;
+// font-family: 'Kanit', sans-serif;
+// font-family: 'Nobile', sans-serif;
+
+.header{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin: 0px 0px 10px 0px;
+    // AMEZON LOGO POTION CSS
+    .img{
+        display: flex;
+        margin-right: 20px;
+        height: 0px;
+        width: 0px;
+        align-items: center;
+        justify-content: center;   
+        background:#353535;
+        border-radius: 0px 10px 10px 0px;
+    }
+    // WEB PAGE NAME CSS
+    .page_name{
+
+        color: #353535;;
+        display: flex;
+        font-size: 1.4em;
+        height: 60px;
+        font-family: 'Nobile', sans-serif;
+        align-items: center;
+        width: 100%;
+        font-weight: 500;
+        border-bottom: 2px solid #25222293;
+    }
+}
