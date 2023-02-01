@@ -1,0 +1,66 @@
+1. Write a query to fetch the number of employees working in the department ‘Admin’
+---------
+> SELECT COUNT(*) as "Admin" from public.EmployeeInfo where Department='Admin';
+
+
+2. Write a query to retrieve the first four characters of  EmpLname from the EmployeeInfo table.
+---------
+> select SUBSTRING(EmpLname,1,4) as "4ch Lname", "EmpID" from public.employeeInfo;
+
+
+3. Write q query to find all the employees whose salary is between 50000 to 100000.
+----------
+> select * from public.employeeposition where Salary Between 50000 AND 100000;
+
+
+4. Write a query to find the names of employees that begin with ‘S’
+----------
+>select EmpFname from public.employeeinfo where EmpFname Like 'S%';
+
+
+5. Write a query to fetch top N records order by salary. (ex. top 5 records)
+--------
+>SELECT * FROM public.EmployeePosition ORDER BY Salary LIMIT 5;
+>SELECT * FROM public.EmployeePosition ORDER BY Salary FETCH FIRST 5 ROW ONLY;
+
+
+6. Write a query to fetch details of all employees excluding the employees with first names, “Sanjay” and “Sonia” from the EmployeeInfo table.
+-------
+>SELECT * FROM Public.employeeinfo where empfname NOT IN ('Sanjay','Sonia');
+
+
+7. Write a query to fetch the department-wise count of employees sorted by department’s count in ascending order.
+-------
+Select department,count(*) emp_count from public.employeeinfo Group BY department Order by emp_count;
+
+
+
+8. Create indexing for any particular field and show the difference in data fetching before and after indexing
+---------
+
+-------------------------CREATE INDEX-------------------------
+>CREATE INDEX idx_employeeinfo_dob ON public.employeeinfo(DOB);
+--------------------------------------------------------------
+
+because of the smaller size of the data-set the DBMS is auditing sequence rather then index because it might give faster results while searching the cache
+
+>EXPLAIN select * from public.employeeinfo where DOB = '1980-01-01';
+                          QUERY PLAN                           
+---------------------------------------------------------------
+ Seq Scan on employeeinfo  (cost=0.00..11.00 rows=1 width=898)
+   Filter: (dob = '1980-01-01'::date)
+(2 rows)
+
+#BEFORE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#AFTER  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+>EXPLAIN select * from public.employeeinfo where DOB = '1980-01-01';
+                          QUERY PLAN                          
+--------------------------------------------------------------
+ Seq Scan on employeeinfo  (cost=0.00..1.06 rows=1 width=898)
+   Filter: (dob = '1980-01-01'::date)
+(2 rows)
+
