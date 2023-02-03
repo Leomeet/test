@@ -9,7 +9,7 @@
 >> - Types of Pose Estimation
 >> - Main Challenges of Pose Detection
 >
-> ### [Dense Pose Detection Using Wifi](#dense-pose-detection-using-wifi)
+>> ### [Dense Pose Detection Using Wifi](#dense-pose-detection-using-wifi)
 >
 
 
