@@ -162,7 +162,7 @@ sequenceDiagram
     data->>Model: Next set of data
     Model->>Model: dueres
 ```
-![Dense_pose.png](https://drive.google.com/file/d/15IRUNP2Ug7AcFWjeAOg5Vy-W2qIQ4P8K/view?usp=sharing)
+![Dense_pose.png](https://raw.githubusercontent.com/Leomeet/test/ReadMe.md/Wifi-signal-radar.png)
 ### **References:**
 
 - https://arxiv.org/pdf/2301.00250.pdf
