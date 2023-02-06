@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Document</title>
+        <link rel="shortcut icon" type="img/png" href="img/turn.png"/>
+        <link rel="Stylesheet" href="calculator.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800&family=Kanit:wght@300;400&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <main>
+            <div
+                class="container">
+
+                <!-- input tray -->
+                <div class="display">
+                    <input type="text" name="output_main" id="output_main" value="0" readonly/>
+                    <input type="text" name="output_sub" id="output_sub" value="" readonly/>
+                </div>
+
+
+                <!-- Trigo tray for DEG and FE functions -->
+                <div class="trigo">
+                    <button value="DEG" onclick="DEG()">
+                        DEG
+                    </button>
+                    <button value="F-E" onclick="FE()">
+                        F-E
+                    </button>
+                </div>
+
+                <!-- memory tray -->
+                <div class="memory">
+                    <table>
+                        <tr>
+                            <td>
+                                <button value="MC" onclick="mc()">MC</button>
+                            </td>
+                            <td>
+                                <button value="MR" onclick="mr()">MR</button>
+                            </td>
+                            <td>
+                                <button value="M+" onclick="mplus()">M+</button>
+                            </td>
+                            <td>
+                                <button value="M-" onclick="mminus()">M-</button>
+                            </td>
+                            <td>
+                                <button value="MS" onclick="msave()">MS</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <!-- Trigo functions tray  -->
+                <div class="dropdown">
+
+                    <div class="icon">
+                        &#8895;
+                    </div>
+                    <div class="btn">
+                        <button value="sin" onclick="sin()">
+                            sin
+                        </button>
+                    </div>
+                    <div class="btn">
+                        <button value="cos" onclick="cos()">
+                            cos
+                        </button>
+                    </div>
+                    <div class="btn">
+                        <button value="tan" onclick="tan()">
+                            tan
+                        </button>
+                    </div>
+                    <div class="btn">
+                        <button value="sec" onclick="sec()">
+                            sec
+                        </button>
+                    </div>
+                    <div class="btn">
+                        <button value="cosec" onclick="cosec()">
+                            cosec
+                        </button>
+                    </div>
+                    <div class="btn">
+                        <button value="cosec" onclick="cot()">
+                            cot
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- main tray for calculator including functions and numbers -->
+                <div class="table">
+
+
+                    <table>
+
+
+                        <tr>
+                            <td>
+                                <button value="2nd" onclick="">
+                                    2<sup>nd</sup>
+                                </button>
+                            </td>
+                            <td>
+                                <button value="pi" onclick="pi()" style="font-size:20px; color:rgba(245, 82, 82, 0.884);">
+                                    &#x3C0;
+                                    <!--pie -->
+                                </button>
+                            </td>
+                            <td>
+                                <button value="e" onclick="e()">
+                                    e
+                                </button>
+                            </td>
+                            <td>
+                                <button value="C" onclick="clean_slate()">
+                                    C
+                                </button>
+                            </td>
+                            <td>
+                                <button onclick="back_space()">
+                                    <i class="fa-solid fa-delete-left"></i>
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <button value="^2" onclick="x_squere()">
+                                    x<sup>2</sup>
+                                </button>
+                            </td>
+                            <td>
+                                <button value="1/x" onclick="inverse()">
+                                    <sup>1</sup>/x
+                                </button>
+                            </td>
+                            <td>
+                                <button value="abs" onclick="absolute_f()">
+                                    |x|
+                                </button>
+                            </td>
+                            <td>
+                                <button value="exp" onclick="exp()">
+                                    exp
+                                </button>
+                            </td>
+                            <td>
+                                <button value="%" onclick="f_print(event)">
+                                    mod
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button value="2sqrtx" onclick="sqrt2x()">
+                                    <sup>2</sup>&radic;x̄
+                                    <!-- 2 sqroot of x-->
+                                </button>
+                            </td>
+                            <td>
+                                <button value="(" onclick="f_print(event)">
+                                    (
+                                </button>
+                            </td>
+                            <td>
+                                <button value=")" onclick="f_print(event)">
+                                    )
+                                </button>
+                            </td>
+                            <td>
+                                <button value="!" onclick="fectorialize()">
+                                    n!
+                                </button>
+                            </td>
+                            <td>
+                                <button style="font-size: 20px;" value="/" onclick="f_print(event)">
+                                    &#xF7;
+                                </button>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>
+                                <button value="**" id="x_res_y" onclick="f_print(event)">
+                                    x<sup>y</sup>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="7" onclick="f_print(event)">
+                                    7
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="8" onclick="f_print(event)">
+                                    8
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="9" onclick="f_print(event)">
+                                    9
+                                </button>
+                            </td>
+                            <td>
+                                <button style="font-size: 20px;" value="*" onclick="f_print(event)">
+                                    &times;
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button>
+                                    10<sup>x</sup>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="4" onclick="f_print(event)">
+                                    4
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="5" onclick="f_print(event)">
+                                    5
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="6" onclick="f_print(event)">
+                                    6
+                                </button>
+                            </td>
+                            <td>
+                                <button style="font-size: 20px;" value="-" onclick="f_print(event)">
+                                    -
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <button value="Log" onclick="cap_log()">
+                                    log
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="1" onclick="f_print(event)">
+                                    1
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="2" onclick="f_print(event)">
+                                    2
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="3" onclick="f_print(event)">
+                                    3
+                                </button>
+                            </td>
+                            <td>
+                                <button style="font-size: 20px;" value="+" onclick="f_print(event)">
+                                    +
+                                </button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>
+                                <button value="Lg" onclick="natural_log()">
+                                    ln
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="+/-" onclick="">
+                                    <sup>+</sup>/<sub>-</sub>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="0" onclick="f_print(event)">
+                                    0
+                                </button>
+                            </td>
+                            <td>
+                                <button class="heighlights" value="." onclick="f_print(event)">
+                                    .
+                                </button>
+                            </td>
+                            <td>
+                                <button class="equals" onclick="f_equals()" style="color: rgb(71, 139, 25); font-size:20px; font-weight:800;">
+                                    =
+                                </button>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+            </div>
+        </main>
+
+        <script src="calculator.js"></script>
+    </body>
+</html>

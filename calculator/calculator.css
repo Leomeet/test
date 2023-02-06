@@ -1,0 +1,185 @@
+body {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  width: 100%;
+  height: 100VH;
+  display: flex;
+  justify-content: CENTER;
+  align-items: center;
+  background-color: rgb(231, 231, 231);
+  font-family: "Inconsolata", monospace;
+}
+body main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: rgba(163, 185, 228, 0.685);
+  padding: 0px 10px 0px 10px;
+  border-radius: 10px 10px 5px 5px;
+  max-width: 320px;
+  border: none;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.596);
+}
+body main .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body main .container .display {
+  width: 320px;
+}
+body main .container .display input {
+  background-color: rgba(140, 170, 231, 0.685);
+  width: 320px;
+  border: none;
+  outline: none;
+  text-align: right;
+  font-family: "Inconsolata", monospace;
+  transition-delay: 100ms;
+}
+body main .container .display #output_main {
+  height: 60px;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  border-radius: 10px 10px 0px 0px;
+}
+body main .container .display #output_main:hover {
+  font-size: 35px;
+}
+body main .container .display #output_sub {
+  padding: 5px 3px;
+  color: rgba(0, 0, 0, 0.425);
+  font-size: 25px;
+  font-weight: 600;
+  width: 320px;
+}
+body main .container .trigo {
+  width: 100%;
+  align-items: left;
+}
+body main .container .trigo button {
+  padding: 0px;
+  width: 80px;
+  height: 40px;
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+body main .container .trigo button:hover {
+  color: aliceblue;
+}
+body main .container .memory {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main .container .memory table {
+  white-space: nowrap;
+  width: 100%;
+}
+body main .container .memory table tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+body main .container .memory table tr td button {
+  width: 100%;
+  height: 30px;
+  font-family: "Kanit", sans-serif;
+  background: rgba(167, 182, 211, 0.479);
+  border: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-size: 25px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+body main .container .memory table tr td:hover button {
+  background: rgba(135, 152, 187, 0.644);
+}
+body main .container .dropdown {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+body main .container .dropdown .icon {
+  margin-right: -2px;
+}
+body main .container .dropdown .btn {
+  padding: 0px;
+  margin: 0px;
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  align-items: center;
+}
+body main .container .dropdown .btn button {
+  font-family: "Inconsolata", monospace;
+  border: none;
+  background: rgba(90, 106, 138, 0.74);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  border-radius: 5px;
+  min-width: 40px;
+  height: 25px;
+  color: rgb(238, 238, 238);
+}
+body main .container .dropdown .btn:hover button {
+  background: rgba(95, 124, 187, 0.644);
+}
+body main .container .table {
+  width: 100%;
+}
+body main .container .table table {
+  white-space: nowrap;
+  width: 100%;
+}
+body main .container .table table tr td {
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+body main .container .table table tr td button {
+  width: 60px;
+  height: 40px;
+  background: rgba(245, 245, 245, 0.534);
+  border: none;
+  font-weight: 400;
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 1px;
+  font-size: 15px;
+  border-radius: 4px;
+}
+body main .container .table table tr td .heighlights {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Inconsolata", monospace;
+  background: whitesmoke;
+}
+body main .container .table table tr td .equals {
+  font-family: "Inconsolata", monospace;
+  background: rgba(164, 247, 116, 0.753);
+  color: rgb(71, 139, 25);
+  font-size: 20px;
+  font-weight: 800;
+}
+body main .container .table table tr td:hover button {
+  border: 2px solid rgb(158, 158, 158);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  transition-delay: 4ms;
+}/*# sourceMappingURL=calculator.css.map */
