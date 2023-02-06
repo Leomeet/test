@@ -1,0 +1,101 @@
+1. Batch Create with minimum 100 records in MongoDb (create batch).
+
+Code: 
+	db.createCollection("information")
+	db.information.insertmany({
+	    {
+		"id": 1,
+		"first_name": "Antony",
+		"last_name": "Main",
+		"email": "amain0@answers.com",
+		"gender": "Genderfluid",
+		"ip_address": "236.105.62.1"
+	    },
+	    {
+		"id": 2,
+		"first_name": "Micheline",
+		"last_name": "Hugo",
+		"email": "mhugo1@rakuten.co.jp",
+		"gender": "Female",
+		"ip_address": "252.207.27.81"
+	    },
+	    {
+		"id": 3,
+		"first_name": "Eddie",
+		"last_name": "Temperton",
+		"email": "etemperton2@redcross.org",
+		"gender": "Male",
+		"ip_address": "92.74.152.144"
+	    },
+	    {
+		"id": 4,
+		"first_name": "Arlana",
+		"last_name": "Precious",
+		"email": "aprecious3@jugem.jp",
+		"gender": "Female",
+		"ip_address": "15.205.30.248"
+	    },
+	    {
+		"id": 5,
+		"first_name": "Arlen",
+		"last_name": "Doyley",
+		"email": "adoyley4@bizjournals.com",
+		"gender": "Male",
+		"ip_address": "102.109.150.37"
+	    },
+	    {
+		"id": 6,
+		"first_name": "Earvin",
+		"last_name": "Gullan",
+		"email": "egullan5@nasa.gov",
+		"gender": "Male",
+		"ip_address": "88.54.7.178"
+	    },
+	...
+})
+
+
+
+2.  Batch Update with minimum 100 records  in MongoDB (update batch)
+
+Code:
+	> db.information.updateMany({gender:"Male"},
+		{$set:{annotates:"Patriotic"}}) 
+	// this query provides 425 modifications over the collection
+	
+	> db.information.updateMany(
+	{gender:{$in:['Female','Genderfluid']}}, 
+	{$set:{annotates:"Harmonics"}})
+	// the query provided 495 modifications over the collection
+
+	> we can also write it using OR operation
+	#db.information.updateMany(
+	{$or:[gender:'Female',gender:'Genderfluid']} 
+	,{$set:{annotates:"Protegonists"}})
+
+
+3. Perform Indexing on particular 3 fields in mongoDB
+
+Code:
+	> db.information.createIndex({"city":1})
+	> db.information.createIndex({"Id":1})
+	> db.information.createIndex({"Bitcoin_addrerss":1})
+	
+4. Find duplicates using aggregation in MongoDB
+
+	> db.information.aggregate(
+		[ 
+			{
+				$group:{
+				    _id: "$first_name",
+				    count:{$sum: 1}
+				}	
+			},
+			{
+				$match: {count: {$gt:1}}
+			},
+			{
+				$sort: {count: -1}
+			}
+		]
+	)
