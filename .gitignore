@@ -1,1 +1,5 @@
 *.obsidian
+.md
+.vscode
+__pycache__
+
